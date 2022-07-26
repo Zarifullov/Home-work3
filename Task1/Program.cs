@@ -1,17 +1,19 @@
-﻿int number = 0;
-
+﻿
 Console.WriteLine("Введите пятизначное число: ");
-number = int.Parse(Console.ReadLine());
+string? number = Console.ReadLine();
 
-String user = number;
-
-
-for(int i = 0; i < user.Length; i++)
-
-
-if(i == (user.Length-i))
+void CheckUp (string number)
 {
+if(number[0] == number[4] && number[1] == number[3])
+   {
     Console.WriteLine($"{number}-> Да");
+   }
+   else
+   Console.WriteLine($"{number}-> Нет");
 }
-else
-Console.WriteLine($"{number}-> Нет");
+
+if (number!.Length == 5)
+{
+   CheckUp (number); 
+}
+else Console.WriteLine("Не корректное число");
